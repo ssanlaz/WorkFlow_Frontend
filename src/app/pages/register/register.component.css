@@ -1,0 +1,78 @@
+.registro-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.registro-box{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+h2{
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  /* Estilos del botón */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  /* Mensajes de error */
+.text-danger {
+    font-size: 0.85rem;
+    color: red;
+  }
+  .login{
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  .login a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login a:hover {
+    text-decoration: underline;
+  }

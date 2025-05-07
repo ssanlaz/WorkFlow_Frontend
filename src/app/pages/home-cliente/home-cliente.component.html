@@ -1,0 +1,291 @@
+<div class="home-container">
+  <div class="text-center bg-light py-2 shadow-sm">
+      <h3 class="mb-0 inicio">¡Bienvenido Cliente!</h3>
+    </div>
+  <!-- Recuadro de búsqueda de empleo -->
+  <div class="search-box">
+    <h1>Encuentra tu próximo empleo</h1>
+    <div class="search-filters">
+      <div class="input-container">
+        <label for="job-keyword" class="input-label">Buscar ofertas de:</label>
+        <input type="text" id="job-keyword" class="search-input"  [(ngModel)]="filtro.nombreEmpresa"
+        name="nombreEmpresa" placeholder="Puesto , empresa o palabra clave" >
+      </div>
+      <div class="input-container">
+        <label for="location" class="input-label">En:</label>
+        <input type="text" id="location" class="search-input"   [(ngModel)]="filtro.ciudad"
+        name="ciudad" placeholder="Toda España"  />
+      </div>
+      <button class="btn btn-success publish-btn" (click)="buscarYRedirigir()">
+        <i class="bi bi-search me-2"></i>Buscar</button>
+    </div>
+  </div>
+
+  <!-- Sección ¿Eres empresa? -->
+  <div class="company-box">
+    <div class="company-left">
+      <h2>¿Quieres ver vacantes disponibles?</h2>
+    </div>
+    <div class="company-right">
+      <button class="btn btn-success publish-btn">
+        <i class="bi bi-search me-2"></i><a class="ir" [routerLink]="['/vacantes']">Vacantes Disponibles</a></button>
+    </div>
+  </div>
+
+  <!-- Empresas más importantes -->
+  <div class="companies-box text-center">
+    <h2>Únete a grandes empresas que buscan talentos como tú</h2>
+    <p class="description">
+      Descubre compañías líderes con oportunidades para impulsar tu carrera.<br />
+      Encuentra empleos en diversos sectores y aplica fácilmente con un solo clic.<br />
+      Conéctate con reclutadores y accede a procesos de selección exclusivos.
+    </p>
+
+    <div class="companies-grid">
+      <div class="company-card" *ngFor="let empresa of empresas | slice:0:8">
+        <div class="company-image">
+
+          <a [routerLink]="['/empresa', empresa.nombre]">
+            <img [src]="'assets/logo/' + empresa.imagen" alt="Empresa" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success publish-btn">
+      <i class="bi bi-search me-2"></i> Ver más empresas
+    </button>
+  </div>
+
+    <!-- Encuentra un trabajo de -->
+  <div class="job-search-box text-center">
+    <h2>Ofertas que te están buscando</h2>
+    <p class="description">
+      Postúlate hoy y da el siguiente paso por tu correo
+    </p>
+
+    <!-- Contenedor de las tarjetas de oferta de trabajo -->
+    <div class="job-offer-grid">
+      <div class="job-offer-card" *ngFor="let trabajo of trabajos | slice:0:8" (click)="buscarTrabajo(trabajo.tipo)">
+        <div class="job-offer-image">
+          <img [src]="'assets/img/' + trabajo.imagen" [alt]="trabajo.titulo" />
+        </div>
+        <div class="job-offer-title">
+          <p>{{ trabajo.titulo }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beneficios de usar la plataforma -->
+  <div class="benefits-box">
+   <h2>Beneficios de usar la plataforma</h2>
+
+   <div class="benefits-content">
+     <!-- Parte izquierda: textos con iconos -->
+     <div class="benefits-text">
+        <div class="benefit">
+          <div class="icon">
+           <i class="bi bi-search"></i>
+         </div>
+         <div class="text">
+           <p>Encuentra empleos adaptados a tu perfil.</p>
+          </div>
+       </div>
+
+        <div class="benefit">
+          <div class="icon">
+           <i class="bi bi-person"></i>
+          </div>
+          <div class="text">
+            <p>Aplica con tu CV en un click.</p>
+         </div>
+       </div>
+
+       <div class="benefit">
+         <div class="icon">
+           <i class="bi bi-bell"></i>
+         </div>
+         <div class="text">
+           <p>Recibe alertas personalizadas.</p>
+         </div>
+        </div>
+
+        <div class="benefit">
+         <div class="icon">
+            <i class="bi bi-handshake"></i>
+         </div>
+         <div class="text">
+           <p>Conecta con empresas reales y transparentes.</p>
+         </div>
+        </div>
+     </div>
+
+     <!-- Parte derecha: imagen -->
+     <div class="benefits-image">
+       <img src="assets/img/ilustracion2.png" alt="Imagen beneficios">
+     </div>
+    </div>
+  </div>
+
+  <!-- ¿Por qué publicar en esta web? -->
+  <div class="benefits-box">
+    <h2>¿Por qué publicar en esta web?</h2>
+
+    <div class="benefits-content">
+      <!-- Parte izquierda: imagen -->
+      <div class="benefits-image">
+        <img src="assets/img/ilustracion3.png" alt="Imagen beneficios publicación">
+      </div>
+
+      <!-- Parte derecha: textos con iconos -->
+      <div class="benefits-text">
+        <div class="benefit">
+          <div class="icon">
+            <i class="bi bi-bullseye"></i> <!-- Diana -->
+          </div>
+          <div class="text">
+            <p>Llega a miles de profesionales cualificados.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="icon">
+            <i class="bi bi-clock-history"></i> <!-- Reloj -->
+          </div>
+          <div class="text">
+            <p>Publica ofertas en 2 minutos.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="icon">
+            <i class="bi bi-bar-chart-line"></i> <!-- Gráfico de barras -->
+          </div>
+          <div class="text">
+            <p>Analiza el rendimiento de tus vacantes.</p>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Guía paso a paso para encontrar trabajo -->
+  <div class="benefits-box">
+    <h2>Guía paso a paso para encontrar trabajo</h2>
+
+    <div class="benefits-content">
+      <!-- Parte izquierda: solo texto numerado -->
+      <div class="benefits-text">
+        <div class="benefit">
+          <div class="text">
+            <p>1. Regístrate gratis.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="text">
+            <p>2. Completa tu perfil.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="text">
+            <p>3. Aplica a ofertas que te interesen.</p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="text">
+            <p>4. Contacta con empresas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parte derecha: imagen -->
+     <div class="benefits-image">
+        <img src="assets/img/ilustracion1.png" alt="Imagen guía paso a paso">
+      </div>
+    </div>
+  </div>
+
+    <!-- Cifras que reflejan nuestro impacto -->
+  <h2 style="text-align: center; font-size: 2rem; color: #333; margin-top: 60px; margin-bottom: 40px;">
+    Cifras que reflejan nuestro impacto
+  </h2>
+
+  <div class="impact-stats">
+    <div class="stat-card">
+      <h3>+5.000</h3>
+      <p>Oportunidades laborales creadas para profesionales como tú.</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>+40.000</h3>
+      <p>Talentos ya forman parte de nuestra comunidad.</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>+1.200</h3>
+      <p>Empresas confían en nosotros para conectar con el mejor talento.</p>
+    </div>
+  </div>
+
+    <!-- Historias de éxito -->
+  <h2 style="text-align: center; font-size: 2rem; color: #333; margin-top: 60px; margin-bottom: 40px;">
+    Historias de éxito
+  </h2>
+
+  <div class="impact-stats">
+    <!-- Testimonio 1 -->
+    <div class="stat-card">
+      <p><strong>"Encontré mi primer empleo en desarrollo backend en menos de una semana. ¡Muy fácil y rápido!"</strong></p>
+      <div class="testimonial-footer">
+        <img src="assets/img/cara1.jpg" alt="Carlos" class="testimonial-img">
+        <div class="testimonial-info">
+          <p class="name">Carlos Martínez</p>
+          <p class="role">Desarrollador Backend en Accenture</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="stat-card">
+      <p><strong>"Gracias a las alertas personalizadas, conseguí trabajo ideal para mi perfil técnico."</strong></p>
+      <div class="testimonial-footer">
+        <img src="assets/img/cara2.jpeg" alt="Laura" class="testimonial-img">
+        <div class="testimonial-info">
+          <p class="name">Laura Rodríguez</p>
+          <p class="role">Analista de calidad en Grifols</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio 3 -->
+    <div class="stat-card">
+      <p><strong>"Me gustó que las empresas fueran claras y respondieran rápido. ¡Así da gusto postularse!"</strong></p>
+      <div class="testimonial-footer">
+        <img src="assets/img/cara3.jpeg" alt="Julian" class="testimonial-img">
+        <div class="testimonial-info">
+          <p class="name">Julian Trigueros</p>
+          <p class="role">Diseñador UX/UI en Cabify</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio 4 -->
+    <div class="stat-card">
+      <p><strong>"Desde que actualicé mi perfil, he recibido más ofertas que nunca. ¡Súper recomendable!"</strong></p>
+      <div class="testimonial-footer">
+        <img src="assets/img/cara4.jpeg" alt="Sofía" class="testimonial-img">
+        <div class="testimonial-info">
+          <p class="name">Sofía Herrera</p>
+          <p class="role">Reclutadora IT en Indra</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,20 @@
+<section>
+  <div class="container">
+      <h4 class="text-center pt-3">Postularme a la vacante</h4>
+      <div *ngIf="vacante">
+
+          <h4>{{ vacante.nombre }}</h4>
+          <p>{{ vacante.descripcion }}</p>
+          <p>{{ vacante.detalles }} | {{ vacante.salario }} €</p>
+      </div>
+  <form (ngSubmit)="enviar()">
+      <textarea [(ngModel)]="solicitud.comentarios" name="comentarios" placeholder="Escribe aquí tu experiencia, educación, etc." class="form-control mb-3"></textarea>
+
+      <input type="file" (change)="onArchivoSeleccionado($event)" class="form-control mb-3" />
+
+      <div class="text-center mt-4 pb-4">
+          <button type="submit" class="btn btn-enviar text-center px-5 py-2">Enviar solicitud</button>
+      </div>
+  </form>
+  </div>
+</section>

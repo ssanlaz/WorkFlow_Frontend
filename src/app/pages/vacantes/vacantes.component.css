@@ -1,0 +1,41 @@
+.container{
+    padding-top: 100px;
+}
+
+.contenedor-vacantes{
+    background-color: #d4f0cf;
+    max-width: 800px;   
+  margin: 0 auto;
+}
+.titulo{
+    color:#2D4D83; 
+    text-decoration: solid;
+    font-weight: bold;
+    text-align: center;
+    background-color: #d4f0cf;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+.titulo i{
+    color: rgba(165, 42, 42, 0.629);
+}
+.seccion{
+    background-color: #d4f0cf;
+   width: 100%;
+    
+}
+.btn-ok{
+    background-color:#80FA9C ;
+    color: #2D4D83;
+}
+.btn-mas{
+    background-color:#80FA9C ;
+    color: #2D4D83; 
+    width: 20%;
+}
+.btn-solicitud{
+    background-color:#80FA9C ;
+    color: #2D4D83; 
+    width: 60%;
+
+}

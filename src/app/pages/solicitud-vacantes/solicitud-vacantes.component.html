@@ -1,0 +1,29 @@
+<div class="solicitudes-header text-center">
+  <h2>Solicitudes Recibidas</h2>
+  <p class="descripcion">Revisa y gestiona fácilmente los candidatos interesados en tus vacantes.</p>
+</div>
+
+<div class="table-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>NOMBRE</th>
+        <th>CV</th>
+        <th>ESTADO</th>
+        <th>FECHA</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of solicitudes">
+        <td>{{ solicitud.usuario.nombre }}</td>
+        <td><a  [href]="solicitud.usuario.cvUrl" target="_blank" >Ver CV</a></td>
+        <td>{{ solicitud.estado ? 'Adjudicada' : 'Presentada' }}</td>
+        <td>{{solicitud.fecha | date: 'dd-MM-yyyy'}}</td>
+        <td>
+          <button class="btn btn btn-aceptar me-1" (click)="aceptarSolicitud(solicitud)" [disabled]="solicitud.estado">Aceptar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

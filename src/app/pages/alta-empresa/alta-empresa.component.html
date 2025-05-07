@@ -1,0 +1,59 @@
+<div class="container mt-5 mb-5">
+  <h2 class="text-center mb-4 mt-4">
+    {{ idEmpresa ? 'Editar Empresa' : 'Registrar Nueva Empresa' }}
+  </h2>
+  
+    <form [formGroup]="formulario" (ngSubmit)="registrarEmpresa()" class="row g-3">
+  
+      <!-- Nombre de empresa -->
+      <div class="col-md-6">
+        <label class="form-label">Nombre de la Empresa</label>
+        <input formControlName="nombreEmpresa" class="form-control" type="text">
+      </div>
+  
+      <!-- CIF -->
+      <div class="col-md-6">
+        <label class="form-label">CIF</label>
+        <input formControlName="cif" class="form-control" type="text">
+      </div>
+  
+      <!-- Dirección fiscal -->
+      <div class="col-md-6">
+        <label class="form-label">Dirección Fiscal</label>
+        <input formControlName="direccionFiscal" class="form-control" type="text">
+      </div>
+  
+      <!-- País -->
+      <div class="col-md-6">
+        <label class="form-label">País</label>
+        <input formControlName="pais" class="form-control" type="text">
+      </div>
+  
+      <!-- Ciudad -->
+      <div class="col-md-6">
+        <label class="form-label">Ciudad</label>
+        <input formControlName="ciudad" class="form-control" type="text">
+      </div>
+  
+      <!-- Email -->
+      <div class="col-md-6">
+        <label class="form-label">Correo Electrónico</label>
+        <input formControlName="email" class="form-control" type="email">
+      </div>
+  
+      <!-- Contraseña -->
+       <div class="row pt-2" *ngIf="!idEmpresa">
+      <div class="col-md-6 mx-auto text-center">
+        <label class="form-label">Contraseña</label>
+        <input formControlName="password" class="form-control" type="password">
+      </div>
+    </div>
+  
+      <!-- Botón -->
+      <div class="col-12 text-center mt-4 mb-3">
+      <button class="btn btn-registro" type="submit">
+        {{ idEmpresa ? 'Guardar Cambios' : 'Registrar Empresa' }}
+      </button>
+      </div>
+    </form>
+  </div>

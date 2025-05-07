@@ -1,0 +1,13 @@
+.container{
+    background-color: #d4f0cf ;
+    border: 3px solid #2D4D83;
+   color: #2D4D83;
+   
+}
+h2{
+font-weight: bold;
+}
+
+.btn-registro{
+    background-color: #5795FF;
+}

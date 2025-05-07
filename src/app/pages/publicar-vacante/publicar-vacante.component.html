@@ -1,0 +1,74 @@
+<div class="container mt-5">
+  <div class="form-container">
+    <h2 class="text-center mb-4">Paso 1: Información General</h2>
+    <hr class="green-line" />
+
+    <form (ngSubmit)="guardarVacante()" #formVacante="ngForm">
+
+      <div class="form-group">
+        <label for="tituloPuesto">Título del Puesto</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="vacante.nombre" placeholder="Ejemplo: Desarrollador Frontend React">
+      </div>
+
+      <div class="form-group">
+        <label for="ubicacion">Ubicación</label>
+        <input type="text" class="form-control" name="ciudad" [(ngModel)]="vacante.ciudad" placeholder="Ejemplo: Ciudad + Remoto/Híbrido">
+      </div>
+
+      <div class="form-group">
+        <label for="tipoJornada">Tipo de Jornada</label>
+        <input type="text" class="form-control" name="detalles"  [(ngModel)]="vacante.detalles" placeholder="Ejemplo: Tiempo Completo, Media Jornada, Freelance">
+      </div>
+
+
+      <h3 class="mt-5 text-center">Paso 2: Descripción del Puesto</h3>
+      <hr class="green-line" />
+
+    
+      <div class="form-group">
+        <label for="descripcionTrabajo">Descripción del Trabajo</label>
+        <textarea class="form-control" name="descripcion"  [(ngModel)]="vacante.descripcion" rows="4"  placeholder="Describe las tareas principales del puesto"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="imagen">URL de la Imagen</label>
+        <input type="number" class="form-control" name="imagen" [(ngModel)]="vacante.imagen" width="185">
+      </div>
+
+      <div class="form-group">
+        <label for="destacado">¿Destacada?</label>
+        <select class="form-control" name="destacado" [(ngModel)]="vacante.destacado">
+          <option [value]="true">Sí</option>
+          <option [value]="false">No</option>
+        </select>
+      </div>
+     
+      <h3 class="mt-5 text-center">Paso 3: Información Adicional</h3>
+      <hr class="green-line" />
+
+      <div class="form-group">
+       
+          <label for="idCategoria">Categoría</label>
+          <select
+            class="form-control" name="idCategoria" [(ngModel)]="vacante.idCategoria" required>
+            <option value="" disabled selected>Selecciona una categoría</option>
+            <option *ngFor="let cat of categorias" [value]="cat.idCategoria">
+              {{ cat.nombre }}
+            </option>
+          </select>
+        </div>
+      <div class="form-group">
+        <label for="salarioOfrecido">Salario Ofrecido (€)</label>
+        <input type="text" class="form-control" name="salario" [(ngModel)]="vacante.salario"  placeholder="Ejemplo: 32.000€">
+      </div>
+
+
+      <hr class="green-line" />
+
+      
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success">Guardar y Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>

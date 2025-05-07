@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Gestión de Empresas</h2>
+  
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-cabeza">
+        <tr>
+          <th>Empresa</th>
+          <th>Email</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas">
+          <td>{{ empresa.nombreEmpresa }}</td>
+          <td>{{ empresa.email }}</td>
+          <td class="d-flex flex-column flex-md-row gap-2 justify-content-center">
+            <button class="btn btn-editar btn-sm me-4" [routerLink]="['/editarEmpresa',empresa.idEmpresa]">Editar</button>
+            <button class="btn btn-detalles btn-sm me-4" [routerLink]="['/detallesEmpresa',empresa.idEmpresa]">Ver Detalles</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarEmpresa(empresa.idEmpresa)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center mt-3 mb-5">
+        <button class="btn btn-alta btn me-1" [routerLink]="['/altaEmpresa']">Dar de Alta</button>
+    </div>
+  </div>

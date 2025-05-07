@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Gestión de Usuarios</h2>
+
+  <table class="table table-bordered table-hover text-center">
+    <thead class="table-cabeza">
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Fecha Registro</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellidos }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.fechaRegistro | date: 'dd-MM-yyyy' }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="eliminarUsuario(usuario.email)">Dar de baja</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

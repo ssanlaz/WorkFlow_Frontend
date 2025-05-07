@@ -1,0 +1,43 @@
+<div class="container mt-5 mb-5 pb-5">
+  <h2 class="text-center"> {{ modoVisualizacion
+    ? 'Detalles del Administrador'
+    : emailAdmin
+      ? 'Editar Administrador'
+      : 'Registrar Nuevo Administrador' }}
+  </h2>
+  
+    <form [formGroup]="formulario" (ngSubmit)="registrarAdmin()" class="row g-3">
+  
+      <!-- Nombre de empresa -->
+      <div class="col-12">
+        <label class="form-label">Nombre del Administrador</label>
+        <input formControlName="nombre" class="form-control" type="text">
+      </div>
+        <!-- Apellidos -->
+        <div class="col-12">
+            <label class="form-label">Apellidos </label>
+            <input formControlName="apellidos" class="form-control" type="email">
+          </div>
+
+      <!-- Email -->
+      <div class="col-12">
+        <label class="form-label">Correo Electrónico</label>
+        <input formControlName="email" class="form-control" type="email">
+      </div>
+  
+      <!-- Contraseña -->
+      <div class="col-12 mx-auto" *ngIf="!emailAdmin && !modoVisualizacion">
+        <label class="form-label">Contraseña</label>
+        <input formControlName="password" class="form-control" type="password">
+    </div>
+  
+      <!-- Botón -->
+      <div class="col-12 text-center mt-4 mb-5" *ngIf="!modoVisualizacion">
+        <button class="btn btn-registro" type="submit" [disabled]="formulario.invalid">
+          {{ idAdmin ? 'Actualizar Administrador' : 'Registrar Administrador' }}
+        </button>
+      </div>
+  
+    </form>
+  </div>
+

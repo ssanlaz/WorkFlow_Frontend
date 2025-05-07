@@ -1,0 +1,59 @@
+<div *ngIf="empresa">
+  <div class="vacantes-header text-center">
+    <h2>{{ empresa.nombreEmpresa }}</h2>
+    <p class="descripcion">{{ empresa.direccionFiscal }}</p>
+    <p class="descripcion">{{ empresa.email }}</p>
+  </div>
+
+  <div class="vacantes-header text-center">
+    <h2>Información de la Empresa</h2>
+  </div>
+
+  <div class="table-container">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>CAMPO</th>
+          <th>DETALLE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CIF</td>
+          <td>{{ empresa.cif }}</td>
+        </tr>
+        <tr>
+          <td>Nombre Legal</td>
+          <td>{{ empresa.nombreEmpresa }}</td>
+        </tr>
+        <tr>
+          <td>Dirección Fiscal</td>
+          <td>{{ empresa.direccionFiscal }}</td>
+        </tr>
+        <tr>
+          <td>País</td>
+          <td>{{ empresa.pais }}</td>
+        </tr>
+        <tr>
+          <td>Ciudad</td>
+          <td>{{ empresa.ciudad }}</td>
+        </tr>
+        <tr>
+          <td>Correo de Contacto</td>
+          <td>{{ empresa.usuario?.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="vacantes-header text-center" *ngIf="rol === 'empresa'">
+    <h2>Acciones Disponibles</h2>
+  </div>
+
+  <div class="text-center my-4" *ngIf="rol === 'empresa'" >
+    <button class="btn btn-primary me-2" [routerLink]="['/editarEmpresa',empresa.idEmpresa]">Editar Perfil</button>
+    <button class="btn btn-success me-2" [routerLink]="['/home-empresa']">Gestionar Vacantes</button>
+    <button class="btn btn-info me-2" [routerLink]="['/solicitud-vacantes']">Revisar Candidatos</button>
+    <button class="btn btn-warning" [routerLink]="['/publicar-vacante']">Publicar Vacante</button>
+  </div>
+</div>

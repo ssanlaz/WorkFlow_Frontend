@@ -1,0 +1,13 @@
+
+<div class="container mt-4  d-flex justify-content-center align-items-center">
+<div *ngIf="vacante" class="card w-50">
+<div class="card-body">
+    <h2 class="card-title">{{ vacante.nombre }}</h2>
+    <p class="card-text pt-1"><i class="bi bi-dot"></i>Descripción: {{ vacante.descripcion }}</p>
+    <p class="card-text"><i class="bi bi-dot"></i>Fecha: {{ vacante.fecha | date : 'dd-MM-yyyy' }}</p>
+    <p class="card-text"><i class="bi bi-dot"></i>Salario:{{ vacante.salario }} €</p>
+    <p class="card-text"><i class="bi bi-dot"></i>Detalles: {{ vacante.detalles }}</p>
+    <p class="card-text"><i class="bi bi-dot"></i>Estado: {{ vacante.estado }}</p>
+  </div>
+</div>
+</div>

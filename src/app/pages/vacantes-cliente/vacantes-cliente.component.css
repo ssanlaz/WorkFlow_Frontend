@@ -1,0 +1,23 @@
+
+
+  section{
+  overflow-y: auto;
+  }
+ 
+section h2{
+    color: #2D4D83;
+}
+.card{
+    background-color: #d4f0cf;
+    max-width: 800px;
+    margin: 0 auto; /* esto la centra horizontalmente */
+    border-radius: 6px;
+    border: 3px solid #2D4D83;
+}
+.text-nombre{
+    color: #2D4D83;
+}
+.btn-success{
+    background-color: #80FA9C;
+    color: #2D4D83;
+}

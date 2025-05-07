@@ -1,0 +1,60 @@
+.vacantes-header {
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.vacantes-header h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.vacantes-header .descripcion {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.custom-table {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.custom-table thead {
+  background-color: #56BC6C;
+  color: black;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  min-width: 160px;
+}

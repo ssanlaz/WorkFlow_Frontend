@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Gestión de Administradores</h2>
+  
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-cabeza">
+        <tr>
+          <th>Empresa</th>
+          <th>Email</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let admin of administradores">
+          <td>{{ admin.nombre  }}</td>
+          <td>{{ admin.email }}</td>
+          <td>
+            <button class="btn btn-editar btn-sm me-4" [routerLink]="['/editarAdmin',admin.email]">Editar</button>
+            <button class="btn btn-detalles btn-sm me-4" [routerLink]="['/detallesAdmin',admin.email]">Ver Detalles</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarAdmin(admin.email)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center mt-3">
+        <button class="btn btn-alta btn me-1" [routerLink]="['/altaAdmin']">Dar de Alta</button>
+    </div>
+  </div>
+
+

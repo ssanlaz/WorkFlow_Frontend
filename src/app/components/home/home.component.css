@@ -1,0 +1,362 @@
+/* ========================================================
+   Reset global
+   ======================================================== */
+   * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  /* ========================================================
+     Contenedor principal
+     ======================================================== */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    padding-bottom: 100px;
+  }
+
+  /* ========================================================
+     Recuadro de búsqueda de empleo
+     ======================================================== */
+  .search-box {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    background-color: #d4f0cf;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .search-box h1 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 30px;
+  }
+
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  .input-container {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .input-label {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    color: black;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+    font-size: 1rem;
+    height: 40px;
+  }
+
+  /* ========================================================
+     Sección ¿Eres empresa?
+     ======================================================== */
+  .company-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1200px;
+  }
+
+  .company-left h2 {
+    font-size: 1.8rem;
+    color: #003366;
+  }
+
+  .publish-btn {
+    padding: 10px 25px;
+    background-color: #6ce25d;
+    color: black;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 48px;
+  }
+
+  /* ========================================================
+     Empresas destacadas
+     ======================================================== */
+  .companies-box {
+    margin-top: 40px;
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .companies-box h2 {
+    color: #003366;
+  }
+
+  .companies-box .description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .companies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 20px;
+    justify-items: center;
+  }
+
+  .company-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+
+  .company-image img {
+    max-width: 100px;
+    max-height: 80px;
+    object-fit: contain;
+  }
+
+  /* ========================================================
+     Ofertas que te están buscando
+     ======================================================== */
+  .job-search-box {
+    margin-top: 40px;
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .job-search-box h2 {
+    color: #003366;
+  }
+
+  .job-offer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .job-offer-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 220px;
+    height: 230px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .job-offer-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .job-offer-image {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .job-offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .job-offer-title {
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .job-offer-title p {
+    font-weight: 500;
+    color: #333;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* ========================================================
+     Recuadros: Beneficios, Publicar, Guía paso a paso
+     ======================================================== */
+  .benefits-box {
+    background-color: #d4f0cf;
+    padding: 30px;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1200px;
+    margin-top: 40px;
+    color: black;
+  }
+
+  .benefits-box h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .benefits-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .benefits-text {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .benefit .icon {
+    font-size: 2rem;
+    color: black;
+    background-color: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit .text p {
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.5;
+    color: black;
+  }
+
+  .benefits-image {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefits-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  /* ========================================================
+     Cifras que reflejan nuestro impacto
+     ======================================================== */
+  .impact-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  .stat-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(16, 113, 84, 0.2);
+    color: #003366;
+  }
+
+  .stat-card:nth-child(2) {
+    background-color: #d4f0cf;
+    color: #003366;
+  }
+
+  .stat-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: inherit;
+  }
+
+  .stat-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: inherit;
+  }
+
+  /* ========================================================
+     Historias de éxito
+     ======================================================== */
+  .impact-stats + h2,
+  .impact-stats:last-of-type {
+    color: #003366;
+  }
+
+  .impact-stats:last-of-type .stat-card {
+    background-color: #d4f0cf;
+    color: black;
+    box-shadow: 0 4px 8px rgba(16, 113, 84, 0.2);
+  }
+
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .testimonial-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .testimonial-info .name {
+    font-weight: bold;
+    margin: 0;
+    color: inherit;
+  }
+
+  .testimonial-info .role {
+    font-size: 0.9rem;
+    margin: 0;
+    color: inherit;
+  }

@@ -1,0 +1,31 @@
+.container{
+background-color: #d4f0cf;
+max-width: 1000px;
+max-height: 300px;
+margin-top: 4rem;
+margin-left: auto;
+margin-right: auto;
+padding: 2rem;
+border-radius: 8px;
+border: 5px solid #86CAFF;
+
+}
+.custom-text {
+  font-size: 1.1rem;
+  color: #2D4D83;
+}
+
+.text-titulo{
+  font-size: 1.5rem;
+  color: #2D4D83;
+}
+.text-presentada{
+color:#5795FF;
+}
+.text-adjudicada{
+  color: #56BC6C ;
+}
+.btn-volver{
+  background-color: #56BC6C;
+  color: #2D4D83;
+}

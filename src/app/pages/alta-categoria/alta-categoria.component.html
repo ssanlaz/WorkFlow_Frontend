@@ -1,0 +1,25 @@
+<div class="container mt-5 pt-5 mb-5 ">
+    <h2 class="text-center mb-4">{{ idCategoria ? 'Editar Categoría' : 'Registrar Nueva Categoría' }}</h2>
+  
+    <form [formGroup]="formulario" (ngSubmit)="registrarCategoria()" class="mx-auto" >
+      
+      <!-- Nombre -->
+      <div class="col-12 mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input id="nombre" type="text" class="form-control" formControlName="nombre">
+      </div>
+  
+      <!-- Descripción -->
+      <div class="col-12 mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <input id="descripcion" type="text" class="form-control" formControlName="descripcion">
+      </div>
+  
+      <!-- Botón -->
+      <div class="col-12 text-center pt-3 pb-4">
+        <button class="btn btn-success" type="submit" [disabled]="formulario.invalid">
+            {{ idCategoria ? 'Guardar Cambios' : 'Registrar Categoría' }}
+        </button>
+      </div>
+    </form>
+  </div>

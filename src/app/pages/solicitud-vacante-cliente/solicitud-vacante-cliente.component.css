@@ -1,0 +1,21 @@
+
+section{
+  overflow-y: auto;
+}
+
+.container{
+  background-color: #d4f0cf;
+  align-items: center;
+  margin-top: 10%;
+  width: 60%;
+
+}
+.container h4 {
+  color: #2D4D83;
+
+}
+.btn-enviar{
+  background-color: #56BC6C;
+  align-items: center;
+  width: 30%;
+}

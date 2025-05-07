@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+  <div class="container-fluid">
+    <!-- Nombre a la izquierda -->
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets/logo/Logo.png" alt="WorkFlow Logo" height="40" />
+    </a>
+
+    <!-- Botón para móviles -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Enlaces a la derecha -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Si NO está autenticado, mostrar accesos -->
+        <ng-container *ngIf="!isLoggedIn">
+          <li class="nav-item">
+            <button class="btn btn-primary" routerLink="/login">ACCESO EMPRESAS</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-secondary" routerLink="/login">ACCESO CANDIDATOS</button>
+          </li>
+        </ng-container>
+
+        <!-- Si está autenticado, mostrar opciones según el rol -->
+        <ng-container *ngIf="isLoggedIn">
+
+          <!-- CLIENTE -->
+          <ng-container *ngIf="userRole === 'cliente'">
+            <li class="nav-item">
+              <a class="btn btn-cliente me-2" routerLink="/vacantes-cliente">MIS VACANTES</a>
+            </li>
+          </ng-container>
+
+          <!-- EMPRESA -->
+          <ng-container *ngIf="userRole === 'empresa'">
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/home-empresa">INICIO</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/publicar-vacante">PUBLICAR</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/solicitud-vacantes">SOLICITUDES</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/perfil-empresa">PERFIL</button>
+            </li>
+          </ng-container>
+
+          <!-- ADMINISTRADOR -->
+          <ng-container *ngIf="userRole === 'admon'">
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/empresas">EMPRESAS</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/categorias">CATEGORÍAS</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/administradores">ADMINISTRADORES</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" routerLink="/usuarios">USUARIOS</button>
+            </li>
+          </ng-container>
+
+          <!-- LOGOUT -->
+          <li class="nav-item">
+            <button class="btn btn-danger ms-3" (click)="logout()">Cerrar Sesión</button>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>

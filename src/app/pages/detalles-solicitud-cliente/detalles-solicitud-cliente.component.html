@@ -1,0 +1,23 @@
+<div class="container d-flex flex-column align-items-center mt-5 mb-5">
+  <div *ngIf="solicitud">
+      <h2 class="text-titulo text-center mb-4">Detalle de la Solicitud</h2>
+
+      <p class="custom-text"><strong>Vacante:</strong> {{ solicitud.nombreVacante }}</p>
+      <h6 class="custom-text"><strong>Empresa:</strong> {{ solicitud.nombreEmpresa }}</h6>
+      <p class="custom-text"><strong>Fecha de postulación:</strong> {{ solicitud.fecha | date: 'dd-MM-yyyy'}}</p>
+      <p class="custom-text"><strong>Estado:</strong>
+        <span [ngClass]="{
+          'text-presentada':!solicitud.estado ,
+          'text-Adjudicada': solicitud.estado
+        }">
+          {{ solicitud.estado  ? 'Adjudicada' : 'Presentada' }}
+        </span>
+      </p>
+      <p class="custom-text"><strong>Comentarios:</strong> {{ solicitud.comentarios }}</p>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+  <button class="btn btn-volver mt-3  px-5" [routerLink]="['/vacantes-cliente']"> Volver</button>
+</div>
+

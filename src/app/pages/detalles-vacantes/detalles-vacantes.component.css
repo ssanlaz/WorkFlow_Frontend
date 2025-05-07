@@ -1,0 +1,15 @@
+.card{
+    background-color: #d4f0cf;
+    border: 3px solid #5795FF;
+}
+h2{
+    color: #2D4D83;
+    text-align: center;
+}
+p{
+    color: #2D4D83;
+    font-size: 1.1rem;
+}
+.bi-dot{
+    font-size: 1.1rem;
+}

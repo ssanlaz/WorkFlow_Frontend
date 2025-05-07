@@ -1,0 +1,18 @@
+.btn-editar{
+    background-color: #80FA9C;
+    }
+    .btn-detalles{
+    background-color: #5795FF;
+    }
+    .btn-alta{
+    background-color: #88C39F;
+    }
+    
+    .table-cabeza th{
+        background-color: #d4f0cf ;
+        color: #2D4D83;
+    }
+    h2{
+        font-weight: bold;
+        color: #2D4D83;
+    }

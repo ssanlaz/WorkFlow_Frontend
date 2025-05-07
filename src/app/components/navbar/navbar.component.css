@@ -1,0 +1,43 @@
+/* Fondo del navbar en verde claro */
+.custom-navbar {
+  background-color: #d4f0cf !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste al logo */
+.navbar-brand img {
+  height: 40px;
+}
+
+/* Botones separados */
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+/* Botón Acceso Empresas */
+.btn-primary {
+  background-color: #d4f0cf;
+  border: none;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #c0e3b7;
+  color: #000;
+}
+
+/* Botón Acceso Candidatos */
+.btn-secondary {
+  background-color: #6ce25d;
+  border: none;
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: #57c94a;
+  color: #fff;
+}
+.btn-cliente{
+  color:  #000;
+  background-color: #56BC6C;
+}

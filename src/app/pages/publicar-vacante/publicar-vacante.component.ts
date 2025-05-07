@@ -33,7 +33,9 @@ vacante: any = {
   imagen: '',
   detalles: '',
  idCategoria: 0,
+ idEmpresa: 0,
   ciudad : '',
+
   }
 
 
@@ -66,7 +68,10 @@ ngOnInit(): void {
       next: (v) => {
         this.vacante = {
           ...v,
-          idCategoria: v.categoria?.idCategoria,  
+          idCategoria: v.categoria?.idCategoria ?? 0,
+          idEmpresa: v.empresa?.idEmpresa ?? 0,
+          fecha: v.fecha ? new Date(v.fecha) : new Date(),      
+          estado: v.estado ?? 'CREADA' 
         };
       },
       error: (err) => {
@@ -95,13 +100,15 @@ guardarVacante(): void {
   const vacanteDto = {
     nombre: this.vacante.nombre,
     descripcion: this.vacante.descripcion,
+    fecha: this.vacante.fecha, 
     salario: this.vacante.salario,
     destacado: this.vacante.destacado,
     imagen: this.vacante.imagen,
     detalles: this.vacante.detalles,
     ciudad: this.vacante.ciudad,
     idCategoria: this.vacante.idCategoria,
-
+    idEmpresa:this.vacante.idEmpresa,
+    estado: this.vacante.estado,
   };
 
   //Editarla

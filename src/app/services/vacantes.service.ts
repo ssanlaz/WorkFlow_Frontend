@@ -49,7 +49,7 @@ export class VacantesService {
   }
 
   AsignarVacante(idVacante: number, email: String):Observable<any>{
-    return this.http.put<any>(`${this.apiUrl}/vacantes/asignar/${idVacante}/${email}`,{}, { withCredentials: true });
+    return this.http.put<any>(`${this.apiUrl}/vacantes/asigna/${idVacante}/${email}`,{}, { withCredentials: true });
   }
  
   modifcarVacante(idVacante: number, vacanteDto: any): Observable<any>{

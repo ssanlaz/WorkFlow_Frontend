@@ -8,11 +8,16 @@ export interface Vacante {
   destacado: boolean;
   imagen: string;
   detalles: string;
+
+  empresa?: {
+    idEmpresa: number;
+    nombre?: string;
+  };
   categoria: {
     idCategoria: number;
     nombre: string;
     descripcion: string;
   }
   ciudad ?: string;
-  
+ idEmpresa?:number;
 }

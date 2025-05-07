@@ -5,7 +5,15 @@
   color: #2D4D83;;
 }
 
+h2{
+  color: #2D4D83;
+  font-weight: bold;
+}
 
 .btn-sm {
   min-width: 100px;
+}
+
+.btn-editar{
+  color: #5795FF;
 }
